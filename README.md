@@ -27,9 +27,9 @@ More often it would be better to do it in a single on-chain tx (lower tx cost), 
 
 
 
-![image-20220605201235477](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220605201235477.png)
+![image-20220605201235477](./img/image-20220605201235477.png)
 
-![image-20220605201242897](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220605201242897.png)
+![image-20220605201242897](./img/image-20220605201242897.png)
 
 In this demonstration, I architecture as in following diagram. In this project I used 'Sending a permit meta tx and a transfer meta tx in **the same** on-chain tx'.
 
@@ -128,7 +128,7 @@ npx hardhat run scripts\deploy.ts --network localhost
 
 #### Run and output
 
-1. The `from` account will be the owner of the token. (In this case both TargetContract A,B and also C.)![image-20220605232428051](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220605232428051.png)
+1. The `from` account will be the owner of the token. (In this case both TargetContract A,B and also C.)![image-20220605232428051](./img/image-20220605232428051.png)
 
 2. Symbol of Target Contracts are
    1. Target contract A is TCA
@@ -139,7 +139,7 @@ npx hardhat run scripts\deploy.ts --network localhost
 
 > Make sure your connected address on metamask must own the some amount of our token (TCA, TCB, TCC).
 
-![image-20220605234714717](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220605234714717.png)
+![image-20220605234714717](./img/image-20220605234714717.png)
 
 - **Token contract address** : is for which Target contract address you would like to invoke.
 
@@ -151,27 +151,27 @@ npx hardhat run scripts\deploy.ts --network localhost
 
 After you click, you will see the EIP-712 user signed box. As described as in following. EIP domain name is **Receive-interview**.
 
-![image-20220605234611519](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220605234611519.png)
+![image-20220605234611519](./img/image-20220605234611519.png)
 
 
 
 4. In `Relayer-service`, it will hold every incoming transaction according to ``TIMEOUT``config. Currently, we set `10000 ms (or) 10 secs` . If you check the `Relayer-service` you must see like this.
 
-![image-20220606000427572](C:\Users\justi\AppData\Roaming\Typora\typora-user-images\image-20220606000427572.png)
+![image-20220606000427572](./img/image-20220606000427572.png)
 
 It will check transaction queue every timeout with transaction status `pending`.
 
-![image-20220606002814618](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220606002814618.png)
+![image-20220606002814618](./img/image-20220606002814618.png)
 
 5. After every timeout, transaction will be send to the smart contract by calculating the gas limit.
 
-6. If transaction are having trouble to send request to smartcontract, relayer service will be mark those transactions as `ERROR`.![image-20220606010624145](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220606010624145.png)
+6. If transaction are having trouble to send request to smartcontract, relayer service will be mark those transactions as `ERROR`.![image-20220606010624145](./img/image-20220606010624145.png)
 
-![image-20220606011951315](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220606011951315.png)
+![image-20220606011951315](./img/image-20220606011951315.png)
 
 7. Every transaction will be count depending on mas_gas_limit.
 
-![image-20220606012002931](E:\Blockchain\Portfolio\Interview\Final-DOC\image-20220606012002931.png)
+![image-20220606012002931](./img/image-20220606012002931.png)
 
 
 
