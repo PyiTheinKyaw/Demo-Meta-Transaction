@@ -1,7 +1,5 @@
 ## Relayer and EIP712 Meta-Transaction
 
-This project is for code testing by automata Network company's interview.
-
 Project scope is design and implement a simple Relayer service that will batch user submitted transactions and submit multiple transactions in one meta-transaction.
 
 ![image-20220605195820334](./img/image-20220605195820334.png)
